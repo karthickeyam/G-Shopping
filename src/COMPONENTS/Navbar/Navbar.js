@@ -11,7 +11,7 @@ const Navbar = () => {
             <img src={logo} className='logo'/>
             <div className='searchbar'>
                 <input type='text'
-                placeholder='Search for Porduct and Categries'
+                placeholder='Search for Product and Categories'
                 className='search'/>
                 <button>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
