@@ -9,10 +9,10 @@ const ProductCard = ({data}) => {
         </div>
         <div className='s2'>
             <h3>
-                ${
+            ₹{
                 data.productprice  - ( data.productprice * data.discountprecent / 100 )
                 }
-                <span>${data.productprice}</span>
+                <span>₹{data.productprice}</span>
                 </h3>
                 <p>
                   {data.productname}
