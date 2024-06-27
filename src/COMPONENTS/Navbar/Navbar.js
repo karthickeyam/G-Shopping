@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import './Navbar.css'
 import logo from '../../ASSETS/g-shop.png'
 import Dropdown from 'react-bootstrap/Dropdown'
@@ -38,6 +39,9 @@ const Navbar = () => {
             </div>
         </div>
         <div className='s2'>
+          <Link to='/'>
+          <a>Home</a>
+          </Link>
        <Dropdown>
       <Dropdown.Toggle variant="" id="dropdown-basic">
         Categries
@@ -49,8 +53,12 @@ const Navbar = () => {
         <Dropdown.Item href="#/action-3">House Cleaning</Dropdown.Item>
       </Dropdown.Menu>
        </Dropdown>
-       <a>About us</a>
-       <a>Contact</a>
+       <Link to='/about'>
+        <a>About Us</a>
+       </Link>
+      <Link to='/contact'>
+      <a>Contact</a>
+      </Link>
        <Dropdown>
       <Dropdown.Toggle variant="" id="dropdown-basic">
          More

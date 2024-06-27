@@ -10,6 +10,8 @@ import img7 from '../../ASSETS/product/p7.png'
 import img8 from '../../ASSETS/product/p8.png'
 import img9 from '../../ASSETS/product/p9.png'
 import img10 from '../../ASSETS/product/p10.png'
+import img11 from '../../ASSETS/product/p11.png'
+import img12 from '../../ASSETS/product/p12.png'
 import './AllProduct.css'
 const AllProduct = () => {
     const products = [
@@ -81,7 +83,7 @@ const AllProduct = () => {
             id:9,
             productimage: img9,
             productname: 'BABY BACK RIBS POTATO CHIPS',
-            productprice: 300,
+            productprice: 50,
             counttype: '1 each',
             discountprecent: 13
         },
@@ -91,6 +93,22 @@ const AllProduct = () => {
             productname: 'HARPIC',
             productprice: 400,
             counttype: '1 each',
+            discountprecent: 12
+        },
+        {
+            id:11,
+            productimage: img11,
+            productname: 'HIMALAYA BABY POWDER',
+            productprice: 200,
+            counttype: '1 each',
+            discountprecent: 12
+        },
+        {
+            id:12,
+            productimage: img12,
+            productname: 'ROYAL ORGANIC RICE',
+            productprice: 300,
+            counttype: '1 per kg',
             discountprecent: 12
         },
     ]
