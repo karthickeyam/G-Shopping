@@ -28,7 +28,7 @@ const About = () => {
             </div>
         </div>
         <div className='pgright  pgcommon'>
-            <img src='https://images.theconversation.com/files/544734/original/file-20230825-19-dja0ah.jpg?ixlib=rb-4.1.0&rect=1517%2C0%2C4191%2C2674&q=20&auto=format&w=320&fit=clip&dpr=2&usm=12&cs=strip'
+            <img src='https://t4.ftcdn.net/jpg/05/32/81/25/360_F_532812571_2Fzs20otX5pbSCqZG4jXEROYEiBExPQA.jpg'
             alt='noimg'/>
             <div>
                 <h1>Who Are We</h1>
