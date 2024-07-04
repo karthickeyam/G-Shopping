@@ -4,10 +4,53 @@ import './ProductCard.css'
 
 const ProductCard = ({data}) => {
   const [show,setshow] = useState(false)
-  const [qty, setqty] = useState(1)
+  const [count, setCount] = useState(1)
 
-  const getproductid = () =>{
-   
+
+const addtocart = () => {
+    let cart = JSON.parse(localStorage.getItem('cart'))
+    let productdata = data
+    if (cart) {
+      // alert('1 item is already added to cart')
+      let itemincart = cart.find(item => item.productdata.ProductId === productdata.ProductId)
+      if (itemincart) {
+        cart = cart.map(item => {
+          if (item.productdata.ProductId === productdata.ProductId) {
+            return {
+              ...item,
+              quantity: item.quantity + count
+            }
+          }
+          else {
+            return item
+          }
+        })
+        localStorage.setItem('cart', JSON.stringify(cart))
+      }
+      else {
+        cart = [
+          ...cart,
+          {
+            productdata,
+            quantity: count
+          }
+        ]
+        localStorage.setItem('cart', JSON.stringify(cart))
+      }
+    }
+    else {
+      cart = [{
+        productdata,
+        quantity: count
+      }]
+
+      // console.log(cart)
+      localStorage.setItem('cart', JSON.stringify(cart))
+    }
+    // setreloadnavbar(!reloadnavbar)
+    window.location.reload()
+    // toast.success('Item added to cart')
+
   }
   return (
     <div className='product'>
@@ -31,21 +74,23 @@ const ProductCard = ({data}) => {
        {
         show ? 
         <div className='addbtn'>
-          <div className='qty'>
+           <div className='qty'>
               <button
-              onClick={()=>{
-                if(qty>1){
-                  setqty(qty-1)
-                }
-              }}>-</button>
-              <p>{qty}</p>
-              <button onClick={()=> setqty(qty+1)}
-                >+</button>
-      </div>
+                onClick={() => {
+                  if (count > 1) {
+                    setCount(count - 1)
+                  }
+                }}
+              >-</button>
+              <p>{count}</p>
+              <button
+                onClick={() => setCount(count + 1)}
+              >+</button>
+            </div>
        <button className='addtocart'
        onClick={()=>{
         setshow(false)
-       alert('Added to cart')
+        addtocart()
        }}>
         Add to cart
        </button>
